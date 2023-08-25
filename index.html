@@ -34,16 +34,10 @@
 <body>
   <div class="btn">Click Me</div>
   <script>
-
-
-    const myFunc = _ => {
-      return Math.floor(Math.random() * 10000)
-    }
-
+    const myFunc = _ => Math.floor(Math.random() * 10000)
 
     document.querySelector('.btn').addEventListener('click', _ => {
       gtag('event', 'purchase', {
-        // transaction_id: function() { return Math.floor(Math.random() * 10000) },
         transaction_id: myFunc(),
         value: 25.42,
         tax: 4.90,
