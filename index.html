@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WG97LNM6RS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments)
+  }
+  gtag('js', new Date());
+  gtag('config', 'G-WG97LNM6RS', {'debug_mode':true});
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .btn {
+    padding: 15px;
+    border-radius: 5px;
+    background: darkcyan;
+    font-family: arial;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <div class="btn">Click Me</div>
+  <script>
+    document.querySelector('.btn').addEventListener('click', _ => {
+      gtag('event', 'purchase', {
+        transaction_id: 'NEW_12345',
+        value: 25.42,
+        tax: 4.90,
+        shipping: 5.99,
+        currency: 'USD',
+        coupon: 'SUMMER_SALE',
+        items: [{
+          item_id: 'SKU_12345',
+          item_name: 'Stan and Friends Tee',
+          affiliation: 'Google Merchandise Store',
+          coupon: 'SUMMER_FUN',
+          discount: 2.22,
+          index: 0,
+          item_brand: 'Google',
+          item_category: 'Apparel',
+          item_category2: 'Adult',
+          item_category3: 'Shirts',
+          item_category4: 'Crew',
+          item_category5: 'Short sleeve',
+          item_list_id: 'related_products',
+          item_list_name: 'Related Products',
+          item_variant: 'green',
+          location_id: 'ChIJIQBpAG2ahYAR_6128GcTUEo',
+          price: 9.99,
+          quantity: 1
+        }]
+      })
+      gtag('get', 'G-WG97LNM6RS', 'session_id', id => {
+        alert(id)
+      })
+    })
+  </script>
+</body>
+</html>
